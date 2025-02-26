@@ -60,10 +60,11 @@ The project includes unit tests for the ViewModel and Repository layers. To run 
 - `app/src/main/kotlin/com/example/rickandmorty/view/composables/`: Contains the composable functions for the UI.
 - `app/src/test/kotlin/com/example/rickandmorty/`: Contains the unit tests.
 
-## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request.
+## What I did not do:
 
-## License
+- Didnot focuse much on UI beautification
+- Espresso test were ignored for the same reason
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+  
+ 
