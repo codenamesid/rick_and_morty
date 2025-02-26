@@ -66,5 +66,8 @@ The project includes unit tests for the ViewModel and Repository layers. To run 
 - Didnot focuse much on UI beautification
 - Espresso test were ignored for the same reason
 
+## Note
+- `skandh078` , `codenamesid` are my github id's. one is from work, one is personal , as my Android studio is configured with work git id.
+
   
  
