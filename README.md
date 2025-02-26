@@ -35,8 +35,8 @@ The project follows the MVVM architecture pattern:
 
 ## What I did not do:
 
-- Didnot focuse much on UI beautification
-- Espresso test were ignored for the same reason
+- Didnot focuse much on UI beautification to save time
+- Espresso test were ignored to save time
 
 ## Note
 - `skandh078` , `codenamesid` are my github id's. One is from work, one is personal. As my Android studio is configured with work git id. I reliazed after commiting the code to repo :-(
