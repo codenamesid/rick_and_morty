@@ -2,17 +2,24 @@ package com.example.rickandmorty.view.composables
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import androidx.compose.material3.Text
 
 @Composable
-fun SearchBar(text: String, onSearch: (String) -> Unit) {
+fun SearchBar(text: String, onSearch: (String) -> Unit, modifier: Modifier = Modifier) {
     val searchText = remember { mutableStateOf(text) }
     var searchJob by remember { mutableStateOf<Job?>(null) }
     val coroutineScope = rememberCoroutineScope()
@@ -27,9 +34,10 @@ fun SearchBar(text: String, onSearch: (String) -> Unit) {
                 onSearch(searchText.value)
             }
         },
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp),
+            .padding(start = 16.dp, end = 16.dp)
+            .semantics { contentDescription = "Search Bar" },
         placeholder = { Text(text = "Search Characters") }
     )
 }

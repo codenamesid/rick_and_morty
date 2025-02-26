@@ -9,9 +9,9 @@ import coil.compose.AsyncImage
 import com.example.rickandmorty.model.data.Character
 
 @Composable
-fun CharacterItem(character: Character, onItemClick: (Character) -> Unit) {
+fun CharacterItem(character: Character, onClick: (Character) -> Unit, modifier: Modifier) {
     Column(
-        modifier = Modifier.clickable { onItemClick(character) }
+        modifier = modifier.clickable { onClick(character) }
     ) {
         AsyncImage(
             model = character.image,

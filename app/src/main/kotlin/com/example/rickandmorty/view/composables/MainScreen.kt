@@ -16,6 +16,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -39,17 +41,25 @@ fun MainScreen(viewModel: CharacterViewModel) {
                 Column {
                     TopAppBar(
                         title = { Text("Rick and Morty Search") },
-                        modifier = Modifier.padding(top = 24.dp)
+                        modifier = Modifier
+                            .padding(top = 24.dp)
+                            .semantics { contentDescription = "Top App Bar" }
                     )
-                    SearchBar(searchQuery.value, onSearch = { name ->
-                        searchQuery.value = name
-                        viewModel.searchCharacters(name)
-                    })
+                    SearchBar(
+                        searchQuery.value,
+                        onSearch = { name ->
+                            searchQuery.value = name
+                            viewModel.searchCharacters(name)
+                        },
+                        modifier = Modifier.semantics { contentDescription = "Search Bar" }
+                    )
                     when (loadingState) {
                         is LoadingState.Initialize -> {
                             Box(
                                 contentAlignment = Alignment.Center,
-                                modifier = Modifier.fillMaxSize()
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .semantics { contentDescription = "Initialize State" }
                             ) {
                                 Text(text = "Search for your favorite character")
                             }
@@ -58,23 +68,31 @@ fun MainScreen(viewModel: CharacterViewModel) {
                         is LoadingState.Loading -> {
                             Box(
                                 contentAlignment = Alignment.Center,
-                                modifier = Modifier.fillMaxSize()
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .semantics { contentDescription = "Loading State" }
                             ) {
                                 CircularProgressIndicator()
                             }
                         }
 
                         is LoadingState.Success -> {
-                            CharacterGrid(characters = characters, onItemClick = { character ->
-                                selectedCharacter.value = character
-                                navController.navigate("characterDetail")
-                            })
+                            CharacterGrid(
+                                characters = characters,
+                                onItemClick = { character ->
+                                    selectedCharacter.value = character
+                                    navController.navigate("characterDetail")
+                                },
+                                modifier = Modifier.semantics { contentDescription = "Character Grid" }
+                            )
                         }
 
                         is LoadingState.Error -> {
                             Box(
                                 contentAlignment = Alignment.Center,
-                                modifier = Modifier.fillMaxSize()
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .semantics { contentDescription = "Error State" }
                             ) {
                                 Text(text = (loadingState as LoadingState.Error).message)
                             }
@@ -84,7 +102,11 @@ fun MainScreen(viewModel: CharacterViewModel) {
             }
             composable("characterDetail") {
                 selectedCharacter.value?.let {
-                    CharacterDetailView(navController = navController, character = it)
+                    CharacterDetailView(
+                        navController = navController,
+                        character = it,
+                        modifier = Modifier.semantics { contentDescription = "Character Detail View" }
+                    )
                 }
             }
         }

@@ -1,11 +1,11 @@
 package com.example.rickandmorty.view.composables
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -28,9 +30,17 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CharacterDetailView(navController: NavController, character: Character) {
+fun CharacterDetailView(
+    navController: NavController, character: Character,
+    modifier: Modifier = Modifier
+) {
     val savedCharacter = rememberSaveable { character }
-    Column {
+    Column (
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .semantics { contentDescription = "Character Detail View" }
+    ){
         TopAppBar(
             title = { Text("Details") },
             navigationIcon = {
