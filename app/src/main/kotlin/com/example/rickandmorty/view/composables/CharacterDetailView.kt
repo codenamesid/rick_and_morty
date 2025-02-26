@@ -32,7 +32,7 @@ import java.util.Locale
 @Composable
 fun CharacterDetailView(
     navController: NavController, character: Character,
-    modifier: Modifier = Modifier
+    modifier: Modifier
 ) {
     val savedCharacter = rememberSaveable { character }
     Column (

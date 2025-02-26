@@ -19,7 +19,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun SearchBar(text: String, onSearch: (String) -> Unit, modifier: Modifier = Modifier) {
+fun SearchBar(text: String, onSearch: (String) -> Unit, modifier: Modifier) {
     val searchText = remember { mutableStateOf(text) }
     var searchJob by remember { mutableStateOf<Job?>(null) }
     val coroutineScope = rememberCoroutineScope()

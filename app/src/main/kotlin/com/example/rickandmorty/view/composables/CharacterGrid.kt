@@ -16,7 +16,7 @@ import com.example.rickandmorty.model.data.Character
 fun CharacterGrid(
     characters: List<Character>,
     onItemClick: (Character) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
@@ -36,21 +36,3 @@ fun CharacterGrid(
         }
     }
 }
-
-/*
-@Composable
-fun CharacterItem(
-    character: Character,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-            .clickable(onClick = onClick)
-            .semantics { contentDescription = "Character Item: ${character.name}" }
-    ) {
-        Text(text = character.name)
-    }
-}*/
