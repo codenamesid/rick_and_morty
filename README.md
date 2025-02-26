@@ -67,7 +67,7 @@ The project includes unit tests for the ViewModel and Repository layers. To run 
 - Espresso test were ignored for the same reason
 
 ## Note
-- `skandh078` , `codenamesid` are my github id's. one is from work, one is personal , as my Android studio is configured with work git id.
+- `skandh078` , `codenamesid` are my github id's. One is from work, one is personal. As my Android studio is configured with work git id. I reliazed after commiting the code to repo :-(
 
   
  
