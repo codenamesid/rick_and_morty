@@ -18,40 +18,12 @@ The project follows the MVVM architecture pattern:
 
 ## Libraries Used
 
-- [Jetpack Compose](https://developer.android.com/jetpack/compose) - For building the UI.
-- [Dagger Hilt](https://dagger.dev/hilt/) - For dependency injection.
-- [Retrofit](https://square.github.io/retrofit/) - For network requests.
-- [MockK](https://mockk.io/) - For mocking in tests.
-- [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) - For asynchronous programming.
+- Jetpack Compose: For building the UI.
+- Dagger Hilt: For dependency injection.
+- Retrofit: For network requests.
+- MockK: For mocking in tests.
+- Kotlin Coroutines: For asynchronous programming.
 
-## Getting Started
-
-### Prerequisites
-
-- Android Studio
-- Kotlin 1.5+
-- Gradle 7.0+
-
-### Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/rick-and-morty-character-search.git
-    ```
-2. Open the project in Android Studio.
-3. Sync the project with Gradle files.
-
-### Running the App
-
-1. Connect an Android device or start an emulator.
-2. Click on the "Run" button in Android Studio.
-
-## Testing
-
-The project includes unit tests for the ViewModel and Repository layers. To run the tests:
-
-1. Open the `CharacterViewModelTest` and `CharacterRepositoryTest` files.
-2. Right-click and select "Run 'Tests in ...'".
 
 ## Project Structure
 
@@ -63,8 +35,8 @@ The project includes unit tests for the ViewModel and Repository layers. To run 
 
 ## What I did not do:
 
-- Didnot focuse much on UI beautification
-- Espresso test were ignored for the same reason
+- Didnot focuse much on UI beautification to save time
+- Espresso test were ignored to save time
 
 ## Note
 - `skandh078` , `codenamesid` are my github id's. One is from work, one is personal. As my Android studio is configured with work git id. I reliazed after commiting the code to repo :-(
