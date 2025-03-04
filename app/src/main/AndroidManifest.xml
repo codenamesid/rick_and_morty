@@ -18,6 +18,7 @@
         <activity
             android:name="com.example.rickandmorty.view.MainActivity"
             android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/Theme.RickAndMorty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
