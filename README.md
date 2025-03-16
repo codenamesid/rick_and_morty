@@ -32,14 +32,5 @@ The project follows the MVVM architecture pattern:
 - `app/src/main/kotlin/com/example/rickandmorty/view/composables/`: Contains the composable functions for the UI.
 - `app/src/test/kotlin/com/example/rickandmorty/`: Contains the unit tests.
 
-
-## What I did not do:
-
-- Didnot focuse much on UI beautification to save time
-- Espresso test were ignored to save time
-
-## Note
-- `skandh078` , `codenamesid` are my github id's. One is from work, one is personal. As my Android studio is configured with work git id. I reliazed after commiting the code to repo :-(
-
   
  
